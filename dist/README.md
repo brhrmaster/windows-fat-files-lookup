@@ -1,80 +1,55 @@
 # Fat Folder Discovery
 
-A Windows desktop application built in Rust that helps you identify the largest files and folders on your disk storage. Perfect for disk cleanup and storage management.
+A Windows utility for finding and managing large files and folders on your disk storage.
 
-## Features
+## Quick Start
 
-### 🎯 Core Functionality
-- **Disk Selection**: Choose from available storage drives (C:, D:, etc.)
-- **Custom Path Scanning**: Scan specific directories or entire disk roots
-- **Real-Time Results**: See files and folders appear as they're discovered
-- **Size-Based Sorting**: Results automatically sorted by size (largest first)
-- **Configurable Limits**: Display 5-20 largest files and folders
+1. Run `fat-folder-discovery.exe` by double-clicking
+2. Select a drive or enter a specific folder path
+3. Click "Scan" to begin analysis
+4. Review the results in real-time
 
-### 📊 User Interface
-- **Fixed Window Size**: Consistent 800x600 pixel window
-- **Two-Column Layout**: 
-  - Left: "Fat Folders" with folder icons and sizes
-  - Right: "Fat Files" with file type icons and sizes
-- **Real-Time Updates**: Watch results populate during scanning
-- **Size Display**: Human-readable sizes (KB, MB, GB)
-- **Status Bar**: Live scanning progress and configuration info
+No installation required - the application is portable.
 
-### 🔧 Technical Features
-- **Full Disk Scanning**: Traverses entire disk regardless of display limits
-- **Asynchronous Processing**: Non-blocking UI during scans
-- **File Type Icons**: Visual indicators for different file types
-- **Logging System**: Comprehensive logging for monitoring and debugging
-- **Windows Integration**: Native Windows disk enumeration
+## System Requirements
 
-## Screenshots
+- Windows 10 or Windows 11
+- Read access to directories you want to scan
+- No special hardware requirements
 
-The application features:
-- Clean, professional interface with dark theme
-- Real-time scanning progress indicators
-- Two-column results display with proper sizing
-- Status bar showing current configuration and progress
+## Basic Usage
 
-## Requirements
+1. **Scanning a Drive**:
+   - Select a drive from the dropdown menu
+   - Click "Scan" to begin
+   - Watch results appear in real-time
 
-- **Operating System**: Windows 10/11
-- **Build Tools**: Visual Studio Build Tools with C++ workload
-- **Rust**: Latest stable version
+2. **Scanning a Specific Folder**:
+   - Enter the folder path in the path field
+   - Click "Scan" to analyze
+   - The appropriate drive will be selected automatically
 
-## Installation
+3. **Understanding Results**:
+   - Left panel shows largest folders
+   - Right panel shows largest files
+   - Click any item to open its location in Explorer
+   - File sizes are shown in human-readable format (KB, MB, GB)
 
-### Prerequisites
-1. Install [Rust](https://rustup.rs/)
-2. Install Visual Studio Build Tools with "Desktop development with C++" workload
+## Additional Features
 
-### Build Instructions
+- Use sliders to adjust how many items to display (5-20)
+- Click the refresh button to update drive list
+- Stop a scan at any time with the Stop button
+- Type-specific icons for different file types
 
-#### **Method 1: Automated Build (Recommended)**
-```bash
-# Clone the repository
-git clone <repository-url>
-cd fat-folder-discovery
+## Important Notes
 
-# Build and automatically copy to dist folder
-cargo build --release
-# ✅ Executable automatically copied to dist/fat-folder-discovery.exe
-```
-
-#### **Method 2: Batch Script (Windows)**
-```bash
-# Run the automated build script
-.\build_and_distribute.bat
-# ✅ Builds, copies executable and README to dist folder
-```
-
-#### **Method 3: Manual Build**
-```bash
-# Build the application
-cargo build --release
-
-# Run the application
-cargo run --release
-```
+- The application automatically skips system directories for safety
+- Log files are automatically cleaned up on exit
+- Each file/folder entry shows:
+  - Name and full path
+  - Size in readable format
+  - Type-specific icon for files
 
 ## Usage
 
@@ -92,72 +67,11 @@ cargo run --release
 
 ## File Structure
 
-```
-fat-folder-discovery/
-├── src/
-│   ├── main.rs           # Main application logic and UI
-│   ├── disk_scanner.rs   # File system scanning engine
-│   ├── file_utils.rs     # Disk enumeration and utilities
-│   ├── ui_components.rs  # Reusable UI components
-│   └── logger.rs         # Custom logging implementation
-├── Cargo.toml            # Dependencies and project config
-├── monitor_log.ps1       # Log monitoring script
-└── README.md             # This file
-```
+## Getting Help
 
-## Dependencies
-
-- **eframe/egui**: Modern Rust GUI framework
-- **walkdir**: Efficient directory traversal
-- **winapi**: Windows API integration
-- **log**: Comprehensive logging system
-- **tokio**: Asynchronous runtime
-
-## Performance
-
-- **Efficient Scanning**: Uses binary heaps for top-N selection
-- **Memory Optimized**: Maintains only display-limited results in memory
-- **Real-Time Updates**: Results appear every 50 folders / 500 files
-- **Non-Blocking UI**: Scanning runs in separate thread
-
-## Logging
-
-The application creates `fat-folder-discovery.log` with detailed information:
-- Application startup and configuration
-- Disk enumeration results
-- Scanning progress and statistics
-- Error handling and recovery
-
-**Automatic Cleanup**: Log files are automatically deleted when the application closes normally (via Close button or window close). This keeps the distribution clean and prevents log accumulation.
-
-Monitor logs in real-time:
-```powershell
-.\monitor_log.ps1
-```
-
-## Technical Details
-
-### Architecture
-- **GUI Framework**: eframe/egui for modern Rust desktop UI
-- **Scanning Engine**: Custom implementation with walkdir
-- **Data Structures**: BinaryHeap for efficient top-N maintenance
-- **Threading**: std::thread for non-blocking operations
-- **Communication**: mpsc channels for UI updates
-
-### Window Layout
-- **Total Size**: 800x600 pixels (fixed)
-- **Top Panel**: ~60px (controls and configuration)
-- **Main Content**: 800x500px (two 395px columns)
-- **Bottom Panel**: ~40px (status and actions)
-
-## Contributing
-
-This is a focused desktop utility for Windows disk analysis. The codebase follows Rust best practices with clean separation of concerns.
-
-## License
-
-[Add your license information here]
+For issues, feature requests, or contributions, please visit:
+https://github.com/brhrmaster/windows-fat-files-lookup
 
 ---
 
-**Fat Folder Discovery** - Find your disk space hogs quickly and efficiently! 🚀
+**Fat Folder Discovery** - Find your disk space usage quickly and efficiently
