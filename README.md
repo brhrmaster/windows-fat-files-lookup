@@ -53,11 +53,13 @@ A Windows desktop application built in Rust that helps you identify the largest 
 
 ## Installation
 
-1. Download the latest release from the releases page
+1. Download the latest release from the [releases page](https://github.com/brhrmaster/windows-fat-files-lookup/releases/tag/v0.1.0)
 2. Extract the executable to your preferred location
 3. Run `fat-folder-discovery.exe`
 
 No installation required - the application is portable.
+
+[![Latest Release](https://img.shields.io/badge/download-v0.1.0-blue.svg)](https://github.com/brhrmaster/windows-fat-files-lookup/releases/download/v0.1.0/fat-folder-discovery.exe)
 
 ## Building from Source
 
