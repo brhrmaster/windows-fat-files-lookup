@@ -159,11 +159,7 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ## License
 
-[Add your chosen license here]
-
-## Authors
-
-[Add author information here]
+MIT
 
 ---
 
