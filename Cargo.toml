@@ -2,7 +2,7 @@
 name = "fat-folder-discovery"
 version = "0.1.0"
 edition = "2021"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["bhenry.com@gmail.com"]
 description = "A Windows desktop application for discovering large files and folders on disk"
 build = "build.rs"
 
