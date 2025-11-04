@@ -1,5 +1,3 @@
-# Fat Folder Discovery
-
 [![Rust](https://img.shields.io/badge/Rust-2021_Edition-orange.svg)](https://www.rust-lang.org)
 [![Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)](https://www.microsoft.com/windows)
 [![egui](https://img.shields.io/badge/GUI-egui_0.33-green.svg)](https://github.com/emilk/egui)
@@ -10,6 +8,8 @@
 [![Dependencies](https://img.shields.io/badge/winapi-0.3-blue.svg)](https://crates.io/crates/winapi)
 [![Dependencies](https://img.shields.io/badge/log-0.4-blue.svg)](https://crates.io/crates/log)
 [![Dependencies](https://img.shields.io/badge/ctrlc-3.4-blue.svg)](https://crates.io/crates/ctrlc)
+
+# Fat Folder Discovery
 
 A Windows desktop application built in Rust that helps you identify the largest files and folders on your disk storage. Perfect for disk cleanup and storage management.
 
